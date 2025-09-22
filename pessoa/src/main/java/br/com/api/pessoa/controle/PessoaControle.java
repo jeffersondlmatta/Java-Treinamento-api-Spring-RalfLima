@@ -1,3 +1,10 @@
+/*Classe Controle (Controller)
+Responsável por receber requisições do usuário (API ou tela).
+Faz a ligação entre a View (ou frontend) e o Model/Service.
+Define os endpoints REST (se for API Spring Boot).
+Normalmente anotada com @RestController ou @Controller.
+ */
+
 package br.com.api.pessoa.controle;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,4 +23,4 @@ public class PessoaControle {
     public String apresentaacao(@PathVariable String nome){
         return "Olá, eu sou " + nome + "!";
     }
-}   
+}       
