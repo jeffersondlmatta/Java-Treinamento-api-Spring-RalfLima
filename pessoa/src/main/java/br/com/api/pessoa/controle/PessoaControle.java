@@ -20,7 +20,7 @@ public class PessoaControle {
     }
 
     @GetMapping("/apresentacao/{nome}") //trabalhar com variáveis de caminho 
-    public String apresentaacao(@PathVariable String nome){
+    public String apresentacao(@PathVariable String nome){
         return "Olá, eu sou " + nome + "!";
     }
-}       
+}

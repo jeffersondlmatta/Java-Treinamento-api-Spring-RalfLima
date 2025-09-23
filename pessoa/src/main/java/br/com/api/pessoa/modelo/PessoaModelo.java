@@ -7,7 +7,22 @@ Em aplicações Spring, normalmente é uma classe anotada com @Entity.
 
 package br.com.api.pessoa.modelo;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@Entity  //Indica que a classe é uma entidade JPA (Java Persistence API) e será mapeada para uma tabela no banco de dados. 'vai gerar uma tabela no banco de dados'
+@Table(name="pessoa") //Especifica o nome da tabela no banco de dados que esta entidade irá mapear. Se não for especificado, o nome da tabela será o mesmo que o nome da classe.'vai definir o nome da tabela'
 public class PessoaModelo {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)  //Indica que o valor do campo será gerado automaticamente pelo banco de dados, geralmente usado para chaves primárias.'gera id para cada pessoa'
     private long codigo;
     private String nome;
     private int idade;
@@ -15,28 +30,5 @@ public class PessoaModelo {
 
 
 
-    public long getCodigo() {
-        return codigo;
-    }
-    public void setCodigo(long codigo) {
-        this.codigo = codigo;
-    }
-    public String getNome() {
-        return nome;
-    }
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-    public int getIdade() {
-        return idade;
-    }
-    public void setIdade(int idade) {
-        this.idade = idade;
-    }
-    public String getCidade() {
-        return cidade;
-    }
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
-    }
+    
 }
